@@ -12,13 +12,12 @@ export default defineConfig({
   head: [["link", { rel: "icon", type: "image/svg+xml", href: "logo.svg" }]],
   // 主题配置
   themeConfig: {
-    
     // 网站标题
     siteTitle: "Vue.js",
     // 网站图标
     logo: "/logo.svg",
     // 可以添加更多 outline 相关的配置项，以下是一些可能的扩展配置示例：
-    outlineTitle: "本页",
+    outlineTitle: "本页目录",
     // 自定义出现在上一页和下一页链接上方的文本
 
     docFooter: {
@@ -84,5 +83,11 @@ export default defineConfig({
       dark: "github-dark",
     },
     codeCopyButtonTitle: "复制代码",
-  }
+  },
+  vite: {
+    optimizeDeps: {
+      cache: true,
+      force: true,
+    },
+  },
 });
