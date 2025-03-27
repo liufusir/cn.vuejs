@@ -6,7 +6,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "vitepress dev docs",
 		"docs:build": "vitepress build docs --base /cn.vuejs/",
-		"docs:serve": "vitepress serve docs -n"
+		"docs:serve": "vitepress serve docs -n --base /cn.vuejs/"
 	},
 	"type": "module",
 	"keywords": [],

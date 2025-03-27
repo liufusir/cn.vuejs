@@ -4,14 +4,14 @@ title: Vue.js - 渐进式 JavaScript 框架
 ---
 
 <script setup>
-import { withBase, useData } from 'vitepress'
+import { withBase } from 'vitepress'
 </script>
 
 <section id="hero">
     <h1 class="tagline">
         <span class="accent">渐进式</span><br />JavaScript 框架
     </h1>
-    <p class="description">`
+    <p class="description">
         易学易用，性能出色，适用场景丰富的 Web 前端框架。
     </p>
     <p class="actions">

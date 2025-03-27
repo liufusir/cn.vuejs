@@ -1,6 +1,5 @@
 // 导入 defineConfig 函数
 import { defineConfig } from "vitepress";
-
 import { docsSidebarData } from "./docsSidebarData.js";
 
 const basePath = "/guide/";
@@ -10,7 +9,7 @@ export default defineConfig({
   // 打包时将 meta 标签注入到 index.html 中
   metaChunk: true,
   // 自定义网站图标
-  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
+  head: [["link", { rel: "icon", type: "image/svg+xml", href: "logo.svg" }]],
   // 主题配置
   themeConfig: {
     
