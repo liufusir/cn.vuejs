@@ -1,0 +1,22 @@
+{
+	"name": "vitevue",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs --base /https://liufusir.github.io/vitepressvue",
+		"docs:serve": "vitepress serve docs -n"
+	},
+	"type": "module",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"gsap": "^3.12.7",
+		"less": "^4.2.1",
+		"lodash-es": "^4.17.21",
+		"vitepress": "^1.5.0"
+	}
+}

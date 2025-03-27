@@ -1,0 +1,302 @@
+:root {
+  --vp-code-copy-copied-text-content: "复制成功";
+  --vt-font-family-base: Quotes, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  --vp-sidebar-bg-color: transparent;
+  --vt-c-yellow: #ffc517;
+  --vt-c-bg-soft: #f9f9f9;
+  --vt-c-brand: #42b883;
+  --vt-c-red: #ed3c50;
+  --vt-c-yellow: #ffc517;
+}
+/* 为所有可能被锚点定位的元素添加 */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: 110px; /* 与导航栏高度相同 */
+}
+body {
+  font-family: var(--vt-font-family-base);
+}
+.replaceText(@text,@textSir) {
+  font-size: 0;
+  &::before {
+    content: @text;
+    font-size: @textSir;
+  }
+}
+#app a {
+  text-decoration: none;
+  .VPDoc {
+    line-height: 1.7;
+  }
+  .VPDoc li {
+    position: relative;
+    margin: 1px 0;
+  }
+}
+#app .VPFlyout.active .text {
+  color: var(--vp-c-text-1);
+}
+@media (min-width: 960px) {
+  #app .VPNavBarSearch {
+    padding-left: 10px;
+  }
+
+  #app .has-sidebar .title {
+    width: auto;
+    border-bottom: none;
+    position: unset;
+    padding: 0;
+  }
+  #app .VPNavBar .content {
+    padding: 0;
+  }
+  #app div.container {
+    max-width: calc(var(--vp-layout-max-width) - 64px);
+    #local-search .DocSearch-Button {
+      background: transparent;
+      &:hover {
+        border: 1px solid transparent;
+        & kbd,
+        & kbd::after {
+          color: var(--vp-c-brand-1);
+          border-color: var(--vp-c-brand-1);
+        }
+      }
+      .DocSearch-Button-Container span.DocSearch-Button-Placeholder {
+        font-size: 0;
+        margin: 0;
+        padding: 0 10px 0 0;
+        .replaceText("搜索",14px);
+      }
+
+      .DocSearch-Button-Keys kbd {
+        border-color: var(--vp-c-divider);
+        transition: color 0.5s;
+      }
+      span.DocSearch-Button-Container span {
+        color: var(--vp-c-text-2);
+        line-height: 1;
+      }
+      span.DocSearch-Button-Container span.DocSearch-Search-Icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .VPNavBarMenu .VPNavBarMenuGroup.active span > span {
+      color: var(--vp-c-text-1);
+    }
+  }
+  #app .VPSidebar {
+    margin-top: var(--vp-nav-height);
+    padding-top: 0;
+    .VPSidebarItem.level-1 {
+      &.is-active > .item .link > .text {
+        font-weight: 800;
+      }
+
+      &.is-link > .item > .link:hover .text {
+        font-weight: 600;
+        color: var(--vp-c-text-2);
+      }
+    }
+    nav#VPSidebarNav {
+      .VPSidebarItem.level-0 {
+        padding: 0;
+      }
+      .group + .group {
+        border: none;
+        padding-top: 16px;
+      }
+    }
+  }
+}
+
+#app .VPSidebar.open {
+  background-color: #fff;
+}
+#app header.VPNav {
+  .divider {
+    padding: 0;
+  }
+}
+.VPLocalNav {
+  .items,
+  .items .outline,
+  .items .header {
+    background-color: #fff;
+  }
+  .items .header a {
+    font-size: 0px;
+    .replaceText("返回顶部",14px);
+  }
+}
+.appearance {
+  p.text {
+    .replaceText("外貌",12px);
+  }
+}
+#app #VPContent {
+  nav .content {
+    border: none;
+    .outline-marker {
+      width: 4px;
+    }
+  }
+}
+
+.VPDoc .custom-block code {
+  background: var(--vp-code-bg);
+  color: var(--vp-code-color);
+  font-size: var(--vp-code-font-size);
+  border-radius: 4px;
+  padding: 3px 6px;
+  transition: color 0.25s, background-color 0.5s;
+}
+.VPDoc .custom-block a {
+  color: var(--vp-c-brand-1);
+  &:hover {
+    color: var(--vp-c-brand-2);
+  }
+}
+#app div.custom-block {
+  margin: 28px 0;
+  padding: 20px 24px 4px 42px;
+  border-radius: 8px;
+  overflow-x: auto;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #0000008c;
+  background-color: transparent;
+  transition: color 0.5s, background-color 0.5s;
+  li {
+    margin-top: 1px;
+  }
+  &.warning {
+    border: 1px solid var(--vt-c-yellow);
+    &::before {
+      content: "⚠";
+      font-size: 17px;
+      position: absolute;
+      top: 19px;
+      left: 16px;
+      color: var(--vt-c-yellow);
+    }
+  }
+  &.tip {
+    border: 1px solid var(--vt-c-brand);
+    &:before {
+      color: var(--vt-c-brand);
+    }
+  }
+  &.danger {
+    border: 1px solid var(--vt-c-red);
+  }
+
+  &.custom-block.danger .custom-block-title,
+  &.custom-block.danger:before {
+    color: var(--vt-c-red);
+  }
+
+  &:before {
+    content: "ⓘ";
+    position: absolute;
+    font-weight: 600;
+    font-size: 15px;
+    top: 20px;
+    left: 17px;
+  }
+}
+.vp-doc a {
+  color: var(--vt-c-brand);
+}
+.vp-doc a > code {
+  color: inherit;
+}
+.vp-doc div[class*="language-"] + div[class*="language-"] {
+  margin-top: 8px;
+}
+.custom-block.details {
+  background-color: transparent;
+}
+
+/* div.demo */
+:root {
+  --vt-c-bg-mute: #f1f1f1;
+  --vt-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+  --vt-c-bg-soft: #f9f9f9;
+  --vt-c-divider: rgb(60 60 60 / 29%);
+}
+
+.demo {
+  padding: 22px 24px;
+  border-radius: 8px;
+  box-shadow: var(--vt-shadow-2);
+  margin-bottom: 1.2em;
+  transition: background-color 0.5s ease;
+}
+
+.dark .demo {
+  background-color: var(--vt-c-bg-soft);
+}
+
+.demo p {
+  margin: 0;
+}
+
+.demo button {
+  background-color: var(--vt-c-bg-mute);
+  transition: background-color 0.5s;
+  padding: 5px 12px;
+  border: 1px solid var(--vt-c-divider);
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.demo button + button {
+  margin-left: 1em;
+}
+
+.demo input,
+.demo textarea,
+.demo select {
+  border: 1px solid var(--vt-c-divider);
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  margin-top: 10px;
+  background: transparent;
+  transition: background-color 0.5s;
+}
+
+.dark .demo select {
+  background: var(--vt-c-bg-soft);
+}
+
+.dark .demo select option {
+  background: transparent;
+}
+
+.demo input:not([type]):focus,
+.demo textarea:focus,
+.demo select:focus {
+  outline: 1px solid blue;
+}
+
+.demo label {
+  margin: 0 1em 0 0.4em;
+}
+
+.demo select[multiple] {
+  width: 100px;
+}
+
+.demo h1 {
+  margin: 10px 0 0;
+}
