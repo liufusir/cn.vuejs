@@ -52,11 +52,11 @@ html:not(.dark) .accent,
 	line-height: 1.5;
 	color: var(--vt-c-text-2);
 	transition: color 0.5s;
-	font-size: 12px;
+	font-size: 15px;
 	margin: 24px auto 40px;
 }
 .actions a {
-	font-size: 22px;
+	font-size: 16px;
 	display: inline-block;
 	background-color: #f1f1f1;
 	color: #476582;
