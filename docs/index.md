@@ -33,7 +33,7 @@ section#hero {
 	text-align: center;
 }
 .tagline {
-	font-size: 46px;
+	font-size: 36px;
 	line-height: 1.25;
 	font-weight: 900;
 	letter-spacing: -1.5px;
