@@ -29,7 +29,7 @@ import { withBase } from 'vitepress'
 
 <style scoped>
 section#hero {
-	padding: 96px 32px;
+	padding: 96px 22px;
 	text-align: center;
 }
 .tagline {
