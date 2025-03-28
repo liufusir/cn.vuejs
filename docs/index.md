@@ -50,7 +50,7 @@ html:not(.dark) .accent,
 .description {
 	max-width: 960px;
 	line-height: 1.5;
-	color: var(--vt-c-text-2);
+	color: #b1b1b1;
 	transition: color 0.5s;
 	font-size: 15px;
 	margin: 24px auto 40px;
