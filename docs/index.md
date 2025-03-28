@@ -29,7 +29,7 @@ import { withBase } from 'vitepress'
 
 <style scoped>
 section#hero {
-	padding: 96px 22px;
+	padding: 96px 12px;
 	text-align: center;
 }
 .tagline {
@@ -56,7 +56,7 @@ html:not(.dark) .accent,
 	margin: 24px auto 40px;
 }
 .actions a {
-	font-size: 16px;
+	font-size: 10px;
 	display: inline-block;
 	background-color: #f1f1f1;
 	color: #476582;
