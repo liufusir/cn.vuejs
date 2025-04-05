@@ -12,6 +12,7 @@ function createSidebarGroup(text, base, items) {
     { text: "简介", link: "introduction" },
     { text: "快速上手", link: "quick-start" }
   ];
+
   //基础
   const essentialsItems = [
     { text: "创建一个应用", link: "application" },

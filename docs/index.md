@@ -33,12 +33,12 @@ section#hero {
 	text-align: center;
 }
 .tagline {
-	font-size: 36px;
-	line-height: 1.25;
-	font-weight: 900;
-	letter-spacing: -1.5px;
-	max-width: 960px;
-	margin: 0 auto;
+	font-size: 76px;
+    line-height: 1.25;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    max-width: 960px;
+    margin: 0px auto;
 }
 html:not(.dark) .accent,
 .dark .tagline {
@@ -52,7 +52,7 @@ html:not(.dark) .accent,
 	line-height: 1.5;
 	color: #b1b1b1;
 	transition: color 0.5s;
-	font-size: 15px;
+	font-size: 22px;
 	margin: 24px auto 40px;
 }
 .actions a {
@@ -84,5 +84,33 @@ html:not(.dark) .accent,
 	margin-left: 2px;
 	fill: currentColor;
 	transition: transform 0.2s;
+}
+
+@media (max-width: 960px) {
+    .tagline {
+        font-size: 64px;
+        letter-spacing: -0.5px;
+    }
+}
+@media (max-width: 794px) {
+    .tagline {
+        font-size: 48px;
+        letter-spacing: -0.5px;
+    }
+    .description {
+        font-size: 18px;
+        margin-bottom: 48px;
+}
+}
+@media (max-width: 576px) {
+    .description {
+        font-size: 16px;
+        margin: 18px 0px 30px;
+    }
+}
+@media (max-width: 370px) {
+    .tagline {
+        font-size: 36px;
+    }
 }
 </style>

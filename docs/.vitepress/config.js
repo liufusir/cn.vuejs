@@ -85,9 +85,9 @@ export default defineConfig({
     codeCopyButtonTitle: "复制代码",
   },
   vite: {
-    optimizeDeps: {
-      cache: true,
-      force: true,
-    },
+        optimizeDeps: {
+      cache: true,    // 启用依赖缓存
+      force: true     // 强制进行依赖预构建
+    }
   },
 });
