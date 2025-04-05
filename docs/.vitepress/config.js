@@ -24,6 +24,9 @@ export default defineConfig({
       prev: "上一篇",
       next: "下一篇",
     },
+    search: {
+      provider: "local",
+    },
     // 侧边栏配置
     sidebar: docsSidebarData,
 
@@ -85,9 +88,9 @@ export default defineConfig({
     codeCopyButtonTitle: "复制代码",
   },
   vite: {
-        optimizeDeps: {
-      cache: true,    // 启用依赖缓存
-      force: true     // 强制进行依赖预构建
-    }
+    optimizeDeps: {
+      cache: true, // 启用依赖缓存
+      force: true, // 强制进行依赖预构建
+    },
   },
 });

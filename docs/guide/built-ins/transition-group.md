@@ -1,7 +1,11 @@
 <script setup>
+import ListBasic from './transition-demos/ListBasic.vue'
+import ListMove from './transition-demos/ListMove.vue' 
+import ListStagger from './transition-demos/ListStagger.vue'
+
 import { shuffle as _shuffle } from 'lodash-es'
 import { ref,computed } from 'vue'
-const demo1 = 'https://play.vuejs.org/#eNqNVM1u00AQfpWRL6TUtRvSXqK04kcVKhI/Kr1hVBl7nWyz3rV216YoisShSKgC9UzVQyuB4MSVQtS3SVr6FozXdnBLWpFLdme+mfnm2xkPrHtJ4mQpsdpWRwWSJhoU0Wmy6nEaJ0JqGIDqpVHECPgKtqrzECIpYrjFROir3gJRt2oBkkR2IOIk1SScIrEIYjweCK40dIle51RTn61rEitYgcYcrKzCi6YNd2xo2bBkw/LLCk5LEGZuXAltzM15nBHEhAgwQCfzWUocRnhX92Aemh533cne0eTdF49HKQ80FRwoV0RqLDvwOEBZB1M89nXPkSLlYaM4+jwUMeJuz8iOteGSWSWMBqRBbVi0kdL8PCKGef2Lg/2zw1+T90cXnz6PT97+Pv5Q4yJJLDKyUVUyjGgEjRntrMJiCfiHdMSEkP9L+jraTeNFygi4SVFEdNxiZHBY8IK4hPma4A2gE9IMAuYrteJZIXbnWcaOnlep1tjy3QAr9tFbvAP6J4ffxqPR2e7++PTj+en3sx8jfDOU6uL4Z8ctoq7LUdcPM51/HeUq15KNT/bOD3ZnJ9tEsRQOlOAP8dkT4H5MMCejClmB9rt4Sdm0ARPDKGQLkZA5f2wch6kQCgPaffKmNF+KyX+DgYHB0Ohb5nIZrai4V7igveOilOa/JrBlW8W2LcR+4mwrwXGBzVBgYeNAJu1qTLCXak1zq2f1tE5U23VTnvS7Dq6qWwOUzz/EGlrhhEW0e6VCvtuUEfk0yYleruQzJl4/MjYtU2JX9qBHgv4M+7baKTg9kwTnICOeNfVpX+KyF+6150/IDp6nzliEKUP0Dc4NogRLc44F7D7uNNKu4QzbdSMY5d1NtbajCepfNpUTNWoYvGfhJ+zBDa3/pdtylmoqbmVE5jlRwJaz7DRb1vAPvRztyw=='
+
 
 const getInitialItems = () => [1, 2, 3, 4, 5]
 const items = ref(getInitialItems())
@@ -151,15 +155,8 @@ css
 }
 ```
 
-<div class="demo">
-    <button @click="insert">在任意位置添加一项</button>
-    <button @click="removeRandom">移除任意位置上的一项</button>
-    <TransitionGroup name="list" tag="ul">
-        <li v-for="item in items" :key="item">
-            {{ item }}
-        </li>
-    </TransitionGroup>
-</div>
+<ListBasic />
+
 
 [在演练场中尝试一下](https://play.vuejs.org/#eNqNVM1u00AQfpWRL6TUtRvSXqK04kcVKhI/Kr1hVBl7nWyz3rV216YoisShSKgC9UzVQyuB4MSVQtS3SVr6FozXdnBLWpFLdme+mfnm2xkPrHtJ4mQpsdpWRwWSJhoU0Wmy6nEaJ0JqGIDqpVHECPgKtqrzECIpYrjFROir3gJRt2oBkkR2IOIk1SScIrEIYjweCK40dIle51RTn61rEitYgcYcrKzCi6YNd2xo2bBkw/LLCk5LEGZuXAltzM15nBHEhAgwQCfzWUocRnhX92Aemh533cne0eTdF49HKQ80FRwoV0RqLDvwOEBZB1M89nXPkSLlYaM4+jwUMeJuz8iOteGSWSWMBqRBbVi0kdL8PCKGef2Lg/2zw1+T90cXnz6PT97+Pv5Q4yJJLDKyUVUyjGgEjRntrMJiCfiHdMSEkP9L+jraTeNFygi4SVFEdNxiZHBY8IK4hPma4A2gE9IMAuYrteJZIXbnWcaOnlep1tjy3QAr9tFbvAP6J4ffxqPR2e7++PTj+en3sx8jfDOU6uL4Z8ctoq7LUdcPM51/HeUq15KNT/bOD3ZnJ9tEsRQOlOAP8dkT4H5MMCejClmB9rt4Sdm0ARPDKGQLkZA5f2wch6kQCgPaffKmNF+KyX+DgYHB0Ohb5nIZrai4V7igveOilOa/JrBlW8W2LcR+4mwrwXGBzVBgYeNAJu1qTLCXak1zq2f1tE5U23VTnvS7Dq6qWwOUzz/EGlrhhEW0e6VCvtuUEfk0yYleruQzJl4/MjYtU2JX9qBHgv4M+7baKTg9kwTnICOeNfVpX+KyF+6150/IDp6nzliEKUP0Dc4NogRLc44F7D7uNNKu4QzbdSMY5d1NtbajCepfNpUTNWoYvGfhJ+zBDa3/pdtylmoqbmVE5jlRwJaz7DRb1vAPvRztyw==)
 
