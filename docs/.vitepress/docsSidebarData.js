@@ -49,7 +49,8 @@ function createSidebarGroup(text, base, items) {
   //内置组件
   const builtInsItems = [
     { text: "Transition", link: "transition" },
-    { text: "Transition-group", link: "transition-group" }
+    { text: "TransitionGroup", link: "transition-group" },
+    {text:'keepAlive',link:'keep-alive'}
   ];
   
   // 导出侧边栏数据

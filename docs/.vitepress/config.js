@@ -19,15 +19,26 @@ export default defineConfig({
     // 可以添加更多 outline 相关的配置项，以下是一些可能的扩展配置示例：
     outlineTitle: "本页目录",
     // 自定义出现在上一页和下一页链接上方的文本
-
+    editLink: {
+        pattern: 'https://gitee.com/liufusir/cn.vuejs/:path',
+        text: '在 GitHub 上编辑此页'
+      },
     docFooter: {
       prev: "上一篇",
       next: "下一篇",
     },
     search: {
       provider: "local",
+    //   disableDetailedView: true,
+      options: {
+        translations: {
+          button: {
+            buttonText: "搜索", // 自定义按钮文本
+          },
+        },
+      },
     },
-    // 侧边栏配置
+
     sidebar: docsSidebarData,
 
     // 顶部导航栏配置
@@ -91,6 +102,9 @@ export default defineConfig({
     optimizeDeps: {
       cache: true, // 启用依赖缓存
       force: true, // 强制进行依赖预构建
+    },
+    server: {
+      port: 3000,
     },
   },
 });

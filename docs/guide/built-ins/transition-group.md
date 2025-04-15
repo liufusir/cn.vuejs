@@ -2,116 +2,8 @@
 import ListBasic from './transition-demos/ListBasic.vue'
 import ListMove from './transition-demos/ListMove.vue' 
 import ListStagger from './transition-demos/ListStagger.vue'
-
-import { shuffle as _shuffle } from 'lodash-es'
-import { ref,computed } from 'vue'
-
-
-const getInitialItems = () => [1, 2, 3, 4, 5]
-const items = ref(getInitialItems())
-let id = items.value.length + 1
-//加入
-function insert() {
-  const i = Math.round(Math.random() * items.value.length)
-  items.value.splice(i, 0, id++)
-}
-//移除
-function reset() {
-  items.value = getInitialItems()
-  id = items.value.length + 1
-}
-
-//随机删除一行
-function removeRandom() {
-  if (items.value.length > 0) {
-    const i = Math.floor(Math.random() * items.value.length)
-    items.value.splice(i, 1)
-  }
-  id = items.value.length + 1
-}
-//洗牌
-function shuffle() {
-  items.value = _shuffle(items.value)
-}
-//删除元素
-function remove(item) {
-  const i = items.value.indexOf(item)
-  if (i > -1) {
-    items.value.splice(i, 1)
-  }
-}
-
-import gsap from 'gsap'
-
-const list = [
-  { msg: 'Bruce Lee' },
-  { msg: 'Jackie Chan' },
-  { msg: 'Chuck Norris' },
-  { msg: 'Jet Li' },
-  { msg: 'Kung Fury' }
-]
-
-const query = ref('')
-
-const computedList = computed(() => {
-  return list.filter((item) => item.msg.toLowerCase().includes(query.value))
-})
-
-function onBeforeEnter(el) {
-  el.style.opacity = 0
-  el.style.height = 0
-}
-
-function onEnter(el, done) {
-  gsap.to(el, {
-    opacity: 1,
-    height: '1.6em',
-    delay: el.dataset.index * 0.15,
-    onComplete: done
-  })
-}
-
-function onLeave(el, done) {
-  gsap.to(el, {
-    opacity: 0,
-    height: 0,
-    delay: el.dataset.index * 0.15,
-    onComplete: done
-  })
-}
 </script>
-<style>
 
-    .list-enter-active,
-    .list-leave-active {
-        transition: all 0.5s ease;
-    }
-
-    .list-enter-from,
-    .list-leave-to {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-</style>
-<style>
-.list-move, /* 对移动中的元素应用的过渡 */
-.list-enter-active,
-.list-leave-active {
-  transition: all 0.5s ease;
-}
-
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
-}
-
-/* 确保将离开的元素从布局流中删除
-  以便能够正确地计算移动的动画。 */
-.list-leave-active {
-  position: absolute;
-}
-</style>
 
 # TransitionGroup​{#transition-group}
 `<TransitionGroup>` 是一个内置组件，用于对 `v-for` 列表中的元素或组件的插入、移除和顺序改变添加动画效果。
@@ -185,16 +77,7 @@ css
 ```
 
 现在它看起来好多了，甚至对整个列表执行洗牌的动画也都非常流畅：
-<div class="demo">
-    <button @click="insert">在任意位置添加一项</button>
-    <button @click="removeRandom">移除任意位置上的一项</button>
-    <button @click="shuffle">洗牌</button>
-    <TransitionGroup name="list" tag="ul">
-        <li v-for="item in items" :key="item">
-        {{ item }}
-        </li>
-    </TransitionGroup>
-</div>
+<ListMove/>
 [完整的示例](https://cn.vuejs.org/examples/#list-transition)
 
 ## 自定义过渡组 class​{#custom-transition-group-classes}
@@ -235,22 +118,6 @@ onComplete: done
 })
 }
 ```
-<div class="demo">
-<input v-model="query" />
-  <TransitionGroup
-    tag="ul"
-    :css="false"
-    @before-enter="onBeforeEnter"
-    @enter="onEnter"
-    @leave="onLeave"
-  >
-    <li
-      v-for="(item, index) in computedList"
-      :key="item.msg"
-      :data-index="index"
-    >
-      {{ item.msg }}
-    </li>
-  </TransitionGroup>
-  </div>
+<ListStagger/>
+[在演练场中查看完整示例](https://play.vuejs.org/#eNqlVMuu0zAQ/ZVRNklRm7QLWETtBW4FSFCxYkdYmGSSmjp28KNQVfl3xk7SFyvEponPGc+cOTPNOXrbdenRYZRHa1Nq3lkwaF33VEjedkpbOIPGeg6lajtnsYIeaq1aiOlSfAlqDOtG3L8SUchSSWNBcPrZwNdCAqVqTZND/KxdibBDjKGf3xIfWXngCNs9k4/Udu/KA3xWWnPz1zW0sOOP6CcnG3jv9ImIQn67SvrpUJ9IE/WVxPHsSkw97gbN0zFJZrB5grNPrskcLUNXac2FRZ0k3GIbIvxLSsVTq3bqF+otM5jMUi5L4So0SSicHplwOKOyfShdO1lariQo+Yy10vhO+qwoZkNFFKmxJ4Gp6ljJrRe+vMP3yJu910swNXqXcco1h0pJHDP6CZHEAAcAYMydwypYCDAkJRdX6Sts4xGtUDAKotIVs9Scpd4q/A0vYJmuXo5BSm7JOIEW81DVo77VR207ZEf8F23LB23T+X9VrbNh82nn6UAz7ASzSCeANZe0AnBctIqqbIoojLCIIBvoL5pJw31DH7Ry3VDKsoYinSii4ZyXxhBQM2Fwwt58D7NeoB8QkXfDvwRd2XtceOsCHkwc8KCINAk+vADJppQUFjZ0DsGVGT3uFn1KSjoPeKLoaYtvCO/rIlz3vH9O5FiU/nXny/pDT6YGKZngg0/Zg1GErrMbp6N5NHxJFi3N/4dRkj5IYf5ULxCmiPJpI4rIr4kHimhvbWfyLHOyOzQpNZZ57jXNy4nRGFLTR/0fWBqe7w==)
   
