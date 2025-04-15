@@ -139,7 +139,7 @@ const open = ref(false)
 }
 </style>
 
-我们也可以将 `<Teleport>` 和 [`<Transition>`](./transition) 结合使用来创建一个带动画的模态框。你可以看看[这个示例](/examples/#modal)。
+我们也可以将 `<Teleport>` 和 [`<Transition>`](./transition) 结合使用来创建一个带动画的模态框。你可以看看[这个示例](https://cn.vuejs.org/examples/#modal)。
 
 ::: tip
 `<Teleport>` 挂载时，传送的 `to` 目标必须已经存在于 DOM 中。理想情况下，这应该是整个 Vue 应用 DOM 树外部的一个元素。如果目标元素也是由 Vue 渲染的，你需要确保在挂载 `<Teleport>` 之前先挂载该元素。
@@ -201,8 +201,3 @@ const open = ref(false)
 请注意，目标元素必须与 Teleport 在同一个挂载/更新周期内渲染，即如果 `<div>` 在一秒后才挂载，Teleport 仍然会报错。延迟 Teleport 的原理与 `mounted` 生命周期钩子类似。
 
 ---
-
-**参考**
-
-- [`<Teleport>` API 参考](/api/built-in-components#teleport)
-- [在 SSR 中处理 Teleports](/guide/scaling-up/ssr#teleports)
