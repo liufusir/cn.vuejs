@@ -132,7 +132,7 @@ const open = ref(false)
   left: 50%;
   width: 300px;
   margin-left: -150px;
-  background-color: var(--vt-c-bg);
+  background-color: var(--vp-c-bg);
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
