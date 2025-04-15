@@ -20,16 +20,16 @@ export default defineConfig({
     outlineTitle: "本页目录",
     // 自定义出现在上一页和下一页链接上方的文本
     editLink: {
-        pattern: 'https://gitee.com/liufusir/cn.vuejs/:path',
-        text: '在 GitHub 上编辑此页'
-      },
+      pattern: "https://gitee.com/liufusir/cn.vuejs/:path",
+      text: "在 GitHub 上编辑此页",
+    },
     docFooter: {
       prev: "上一篇",
       next: "下一篇",
     },
     search: {
       provider: "local",
-    //   disableDetailedView: true,
+      //   disableDetailedView: true,
       options: {
         translations: {
           button: {
@@ -99,9 +99,12 @@ export default defineConfig({
     codeCopyButtonTitle: "复制代码",
   },
   vite: {
-        optimizeDeps: {
-      cache: true,    // 启用依赖缓存
-      force: true     // 强制进行依赖预构建
-    }
+    optimizeDeps: {
+      cache: true, // 启用依赖缓存
+      force: true, // 强制进行依赖预构建
+    },
+    server: {
+      port: 3000,
+    },
   },
 });

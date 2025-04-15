@@ -50,7 +50,8 @@ function createSidebarGroup(text, base, items) {
   const builtInsItems = [
     { text: "Transition", link: "transition" },
     { text: "TransitionGroup", link: "transition-group" },
-    {text:'keepAlive',link:'keep-alive'}
+    {text:'keepAlive',link:'keep-alive'},
+    {text:'Teleport',link:'teleport'},
   ];
   
   // 导出侧边栏数据
