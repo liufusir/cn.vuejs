@@ -1,1 +1,1 @@
-github同步到gitee2
+github同步到gitee
